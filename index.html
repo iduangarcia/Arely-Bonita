@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>El Amor de Mi Vida</title>
+  <style>
+    @keyframes fireworks {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-family: "Comic Sans MS";
+      font-size: 24px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      border: 10px solid rgb(223, 19, 213);
+      max-width: 300px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    fieldset {
+      border: 2px solid black;
+      padding: 10px;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .fireworks {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+    }
+
+    .firework {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 2000px;
+      background-color: #ff4c4c;
+      border-radius: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+      animation: fireworks 2s infinite;
+    }
+
+    .firework:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .firework:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .firework:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var option3 = document.getElementById('opcion3');
+      var fireworks = document.getElementById('fireworks');
+
+      option3.addEventListener('change', function() {
+        if (option3.checked) {
+          fireworks.style.display = 'block'; // Muestra los fuegos artificiales
+        } else {
+          fireworks.style.display = 'none'; // Oculta los fuegos artificiales
+        }
+      });
+    });
+  </script>
+</head>   
+
+<body>
+  <h1>13/06/2023</h1>  
+    
+  <img src="Arely.jpg" alt="">
+  
+  <p></p>
+  
+  <fieldset>
+    <legend>Cómo se siente Arely hoy?</legend>
+    <input type="radio" id="opcion1" name="opcion" value="opcion1">
+    <label for="opcion1">Estresada</label><br>
+    <input type="radio" id="opcion2" name="opcion" value="opcion2">
+    <label for="opcion2">Triste</label><br>
+    <input type="radio" id="opcion3" name="opcion" value="opcion3">
+    <label for="opcion3">Hermosa</label><br>
+  </fieldset> 
+  
+  <div id="fireworks" class="fireworks">
+    <div class="firework"></div>
